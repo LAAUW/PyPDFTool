@@ -12,7 +12,7 @@ def read_pdf(file_path):
 
 def add_password(input_file, password, output_file=None):
     if not output_file:
-        output_file = output_file.replace('.pdf', '-withpassword.pdf')
+        output_file = input_file.replace('.pdf', '-withpassword.pdf')
     with open(input_file, 'rb') as file:
         pdf_reader = PyPDF2.PdfFileReader(file)
         pdf_writer = PyPDF2.PdfFileWriter()
@@ -24,7 +24,7 @@ def add_password(input_file, password, output_file=None):
 
 def remove_password(input_file, password, output_file=None):
     if not output_file:
-        output_file = output_file.replace('.pdf', '-nopassword.pdf')
+        output_file = input_file.replace('.pdf', '-nopassword.pdf')
     with open(input_file, 'rb') as file:
         pdf_reader = PyPDF2.PdfFileReader(file)
         pdf_writer = PyPDF2.PdfFileWriter()
@@ -39,7 +39,7 @@ def remove_password(input_file, password, output_file=None):
 
 def rotate_pages(input_file, rotation, output_file=None):
     if not output_file:
-        output_file = output_file.replace('.pdf', '-rotated.pdf')
+        output_file = input_file.replace('.pdf', '-rotated.pdf')
     with open(input_file, 'rb') as file:
         pdf_reader = PyPDF2.PdfFileReader(file)
         pdf_writer = PyPDF2.PdfFileWriter()
@@ -62,9 +62,9 @@ def split_pdf(input_file, output_path):
 
 def split_pdf_at_page(input_file, split_page, output_file_1=None, output_file_2=None):
     if not output_file_1:
-        output_file = output_file_1.replace('.pdf', '-1.pdf')
+        output_file = input_file.replace('.pdf', '-1.pdf')
     if not output_file_2:
-        output_file = output_file_1.replace('.pdf', '-2.pdf')
+        output_file = input_file.replace('.pdf', '-2.pdf')
     with open(input_file, 'rb') as file:
         pdf_reader = PyPDF2.PdfFileReader(file)
         pdf_writer_1 = PyPDF2.PdfFileWriter()
